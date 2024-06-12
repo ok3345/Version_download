@@ -1,0 +1,24 @@
+2023/12/20 
+-재부팅시 와이파이가 연결되지 않아도 sdcard에 데이타가 저장되도록 수정
+-재부팅후 와이파이가 바로 연결되지 않을경우 시간값을 불러오지 못하는 문제를 해결하기위해
+2032 밧데리를 pcb 에 추가
+-와이파이 연결시 저장된 고정ip값 불러오도록 수정
+-gpio13 번에 리셋과 공장초기화 버튼 적용예정, 공장초기화 5초, 리셋1초
+
+2024/03/22 
+-SF-104 보드별 셋팅방법
+-v1.321 v2.321부터 적용, 이전버전은 OTA 펌웨어 업데이트 불가능합니다.
+-Arduion IDE 컴파일시 셋팅변경(OTA 웹 펌웨어 업데이트 가능하게 수정) 
+ [ESP32 C3 Super mini] 을 적용한 조립보드의 경우  
+ Tools > USB CDC On Boot > "Enabled"  
+ Tools > Partition Scheme > "Minimal SPIFFS(1.9MB APP with OTA/190KB SPIFFS)"
+ [ESP32 C3 mini-1] 을 적용한 원보드의 경우  
+ Tools > USB CDC On Boot > "Disabled"  
+ Tools > Partition Scheme > "Minimal SPIFFS(1.9MB APP with OTA/190KB SPIFFS)"
+
+2024/06/12 
+-SF-103 보드 컴파일방법
+업로드 후 만약 시리얼모니터에 
+rst:0x3 (SW_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT) configsip: 0, SPIWP:0xee clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00 mode:DIO, clock div:1 load:0x3fff0030,len:1448 load:0x40078000,len:14844 ho 0 tail 12 room 4 load:0x40080400,len:4 load:0x40080404,len:3356 entry 0x4008059c ets Jul 29 2019 12:21:46 
+이렇게 뜰 경우
+보드를 ESP32 Wrover Module로 맞추면 해결됨
