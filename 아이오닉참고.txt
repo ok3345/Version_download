@@ -1,0 +1,35 @@
+사전 설치 프로그램
+nodejs 설치   https://nodejs.org/ko
+npm install -g @ionic/cli
+npm install @capacitor-community/bluetooth-le
+ionic integrations enable capacitor   //Add Capacitor to your Ionic Project:
+
+새로운 프로그램 시작
+아이오닉 폴더에서 시작(CMD)
+ionic start
+D:\ionic>ionic start
+? Use the app creation wizard? No
+? Framework: Angular
+? Project name: SF104_BLE_v2
+? Starter template:
+  tabs         | A starting project with a simple tabbed interface
+  sidemenu     | A starting project with a side menu with navigation in the content area
+> blank        | A blank starter project
+  list         | A starting project with a list
+  my-first-app | A template for the "Build Your First App" tutorial
+> NgModules
+? Create free Ionic account? (y/N) n
+
+프로그램 수정 후
+ionic build
+npx cap init  //Initialize Capacitor:   이미 capacitor.config.ts 파일이 있으므로, 이 파일을 그대로 사용함으로 실행하지 마세요
+npx cap sync
+ionic cap add android  //한번만 실행하면 됨
+npx cap open android
+
+ionic build 실행안될때
+환경 변수 설정 확인:
+
+npm 글로벌 패키지 경로가 시스템 PATH에 포함되어 있는지 확인합니다. 
+일반적으로 이 경로는 C:\Users\<사용자 이름>\AppData\Roaming\npm입니다. 
+이 경로가 PATH 환경 변수에 포함되어 있는지 확인하고, 포함되지 않았다면 추가합니다.
